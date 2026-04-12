@@ -12,15 +12,15 @@ This project implements a **numerical approximation of the Laplace Transform** i
 
 The program evaluates the Laplace Transform:
 
-[
+$$
 F(s) = \int_0^{\infty} f(t)e^{-st}dt
-]
+$$
 
 using a **finite interval approximation** and explores different values of:
 
-[
+$$
 s = \sigma + i\omega
-]
+$$
 
 ---
 
@@ -28,14 +28,14 @@ s = \sigma + i\omega
 
 The Laplace Transform is defined as:
 
-[
+$$
 F(s) = \int_0^\infty f(t)e^{-st}dt
-]
+$$
 
 Where:
 
-* ( s = \sigma + i\omega )
-* ( e^{-st} = e^{-\sigma t}(\cos(\omega t) - i\sin(\omega t)) )
+* $s = \sigma + i\omega$
+* $e^{-st} = e^{-\sigma t}(\cos(\omega t) - i\sin(\omega t))$
 
 This allows us to separate the transform into:
 
@@ -50,14 +50,14 @@ This allows us to separate the transform into:
 
 We approximate the integral using a simple Riemann sum:
 
-[
+$$
 \int_0^T f(t)dt \approx \sum f(t_i)\Delta t
-]
+$$
 
 Where:
 
-* ( T ) is a finite cutoff
-* ( N ) is the number of samples
+* $T$ is a finite cutoff
+* $N$ is the number of samples
 
 ---
 
@@ -77,9 +77,9 @@ typedef struct {
 
 The test function is:
 
-[
+$$
 f(t) = e^{-t} \sin(5t)
-]
+$$
 
 This ensures:
 
@@ -93,8 +93,8 @@ This ensures:
 
 We compute the transform for multiple values of:
 
-* ( \sigma \in [0.5, 2.5] )
-* ( \omega \in [1, 10] )
+* $\sigma \in [0.5, 2.5]$
+* $\omega \in [1, 10]$
 
 ---
 
@@ -175,27 +175,27 @@ The program analyzes a time-domain signal and extracts its **dominant frequency 
 
 The Continuous Fourier Transform is defined as:
 
-[
+$$
 F(\omega) = \int_{0}^{T} f(t), e^{-i\omega t} , dt
-]
+$$
 
 Using Euler’s formula:
 
-[
+$$
 e^{-i\omega t} = \cos(\omega t) - i\sin(\omega t)
-]
+$$
 
 We can rewrite the transform as:
 
 * Real part:
-  [
+  $$
   \int f(t)\cos(\omega t),dt
-  ]
+  $$
 
 * Imaginary part:
-  [
+  $$
   \int f(t)\sin(\omega t),dt
-  ]
+  $$
 
 ---
 
@@ -205,9 +205,9 @@ We can rewrite the transform as:
 
 We analyze a composite signal:
 
-[
+$$
 f(t) = \sin(2\pi \cdot 3t) + 0.7 \cdot \sin(2\pi \cdot 7t)
-]
+$$
 
 This ensures:
 
@@ -221,14 +221,14 @@ This ensures:
 
 We approximate the integral using a Riemann sum:
 
-[
+$$
 \int_0^T f(t),dt \approx \sum f(t_i)\Delta t
-]
+$$
 
 Where:
 
-* ( T ) = total time window
-* ( N ) = number of samples
+* $T$ = total time window
+* $N$ = number of samples
 
 ---
 
@@ -248,9 +248,9 @@ typedef struct {
 
 We evaluate the transform for:
 
-[
+$$
 \omega_k = 2\pi k, \quad k = 1,2,...,50
-]
+$$
 
 This allows us to detect dominant frequencies in the signal.
 
@@ -260,9 +260,9 @@ This allows us to detect dominant frequencies in the signal.
 
 We compute the magnitude:
 
-[
+$$
 |F(\omega)| = \sqrt{Re^2 + Im^2}
-]
+$$
 
 This represents the **energy contribution** of each frequency.
 
@@ -319,7 +319,7 @@ gcc main.c -o fourier -lm
 | Fourier Transform       | Laplace Transform       |
 | ----------------------- | ----------------------- |
 | Pure frequency analysis | Frequency + decay       |
-| ( e^{-i\omega t} )      | ( e^{-st} )             |
+| $e^{-i\omega t}$        | $e^{-st}$               |
 | Used in signals         | Used in systems/control |
 
 ---
