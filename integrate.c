@@ -50,13 +50,27 @@ void integrate_exp (double coeff) {
     }
 }
 
-void integrate_constant () {
+void integrate_constant (double coeff) {
 
-
+    printf("I = %.2lf * x + C\n", coeff);
 }
 
 
 int main () {
 
+    char function[MAX_LENGTH];
+    double coeff, constant;
+    int exponent;
 
+    printf("Enter function: ");
+    scanf("%49s", function);
+
+    if (strcmp(function, "x^n") == 0) {
+        printf("Coefficient: ");
+        scanf("%lf", &coeff);
+        printf("Exponent n: ");
+        scanf("%d", &exponent);
+        integrate_power(coeff, exponent);
+    }
+    
 }
