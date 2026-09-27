@@ -7,6 +7,7 @@
 
 typedef struct { double re, im; } Complex;
 
+
 typedef struct {double sigma, omega, amplitude;} Result;
 
 double f (double t) {
