@@ -72,5 +72,51 @@ int main () {
         scanf("%d", &exponent);
         integrate_power(coeff, exponent);
     }
-    
+
+    else if (strcmp(function, "sin(x)") == 0)
+    {
+        printf("Coefficient: ");
+        scanf("%lf", &coeff);
+
+        integrate_sin(coeff);
+    }
+
+    else if (strcmp(function, "cos(x)") == 0)
+    {
+        printf("Coefficient: ");
+        scanf("%lf", &coeff);
+
+        integrate_cos(coeff);
+    }
+    else if (strcmp(function, "exp(x)") == 0)
+    {
+        printf("Coefficient: ");
+        scanf("%lf", &coeff);
+
+        integrate_exp(coeff);
+    }
+
+    else if (strcmp(function, "1/x") == 0)
+    {
+        printf("Coefficient: ");
+        scanf("%lf", &coeff);
+
+        integrate_power(coeff, -1);
+    }
+
+    else if (strcmp(function, "constant") == 0)
+    {
+        printf("Constant: ");
+        scanf("%lf", &constant);
+
+        integrate_constant(constant);
+    }
+    else
+    {
+        printf("\nError: unsupported function.\n");
+    }
+
+
+    return 0;
+
 }
