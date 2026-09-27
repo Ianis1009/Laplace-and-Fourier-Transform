@@ -9,6 +9,7 @@ typedef struct {
     double re, im;
 } Complex;
 
+
 typedef struct {
     double omega;
     double amplitude;
