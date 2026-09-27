@@ -312,24 +312,4 @@ gcc main.c -o fourier -lm
 ./fourier
 ```
 
----
 
-## Relation to Laplace Transform
-
-| Fourier Transform       | Laplace Transform       |
-| ----------------------- | ----------------------- |
-| Pure frequency analysis | Frequency + decay       |
-| $e^{-i\omega t}$        | $e^{-st}$               |
-| Used in signals         | Used in systems/control |
-
----
-
-## Final Note
-
-This project demonstrates how powerful mathematical tools like the Fourier Transform can be implemented from scratch using only:
-
-* basic C
-* standard math libraries
-* and a solid understanding of theory
-
-It bridges the gap between **abstract mathematics** and **practical computation**.
