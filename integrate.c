@@ -23,8 +23,13 @@ void integrate_power (double coeff, int expo) {
     }
 }
 
-void integrate_sin () {
+void integrate_sin (double coeff) {
 
+    if (coeff  == 1) {
+        printf("I = -cos(x) + C\n");
+    } else {
+        printf("I = %.2lf * (-cos(x)) + C\n");
+    }
 }
 
 void integrate_cos () {
